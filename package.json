@@ -1,0 +1,20 @@
+{
+  "name": "jinjiram-ecommerce",
+  "version": "1.0.0",
+  "description": "A Full Stack Ecommerce project using MERN stack",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sujan804/Jinjiram-ecommerce.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Sujan804/Jinjiram-ecommerce/issues"
+  },
+  "homepage": "https://github.com/Sujan804/Jinjiram-ecommerce#readme"
+}
