@@ -7,7 +7,8 @@ import Col from "react-bootstrap/Col";
 import ListGroup from "react-bootstrap/ListGroup";
 import Row from "react-bootstrap/Row";
 import { Helmet } from "react-helmet-async";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
+import LoadingBox from "../components/LoadingBox";
 import { Rating } from "../components/Rating";
 import { Store } from "../Store";
 import { getError } from "../utils";
@@ -40,6 +41,7 @@ const reducer = (state, action) => {
 const ProductScreen = () => {
   const params = useParams();
   const { slug } = params;
+  const navigate = useNavigate();
 
   const [{ loading, error, product }, dispatch] = useReducer(reducer, {
     product: [],
@@ -73,9 +75,10 @@ const ProductScreen = () => {
       type: "CART_ADD_ITEM",
       payload: { ...product, quantity },
     });
+    navigate("/cart");
   };
   return loading ? (
-    <div>Loading...</div>
+    <LoadingBox />
   ) : error ? (
     <div>{error}</div>
   ) : (
