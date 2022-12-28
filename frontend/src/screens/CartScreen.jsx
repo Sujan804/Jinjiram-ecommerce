@@ -23,7 +23,7 @@ export default function CartScreen() {
       window.alert("Sorry. Product is out of stock");
       return;
     }
-    alert("added");
+
     ctxDispatch({
       type: "CART_ADD_ITEM",
       payload: { ...item, quantity },
