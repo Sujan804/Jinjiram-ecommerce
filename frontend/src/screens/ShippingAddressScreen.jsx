@@ -13,18 +13,25 @@ export default function ShippingAddressScreen() {
     userInfo,
     cart: { shippingAddress },
   } = state;
-  const [fullName, setFullName] = useState(shippingAddress.fullName || "");
-  const [address, setAddress] = useState(shippingAddress.address || "");
-  const [city, setCity] = useState(shippingAddress.city || "");
+
+  const [fullName, setFullName] = useState(
+    shippingAddress ? shippingAddress.fullName : ""
+  );
+  const [address, setAddress] = useState(
+    shippingAddress ? shippingAddress.address : ""
+  );
+  const [city, setCity] = useState(shippingAddress ? shippingAddress.city : "");
   const [postalCode, setPostalCode] = useState(
-    shippingAddress.postalCode || ""
+    shippingAddress ? shippingAddress.postalCode : ""
   );
   useEffect(() => {
     if (!userInfo) {
       navigate("/signin?redirect=/shipping");
     }
   }, [userInfo, navigate]);
-  const [country, setCountry] = useState(shippingAddress.country || "");
+  const [country, setCountry] = useState(
+    shippingAddress ? shippingAddress.country : ""
+  );
   const submitHandler = (e) => {
     e.preventDefault();
     ctxDispatch({
